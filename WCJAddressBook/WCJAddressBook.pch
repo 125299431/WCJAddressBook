@@ -14,5 +14,7 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define dataBaseFilePath [NSHomeDirectory() stringByAppendingString:@"/Documents/database.sqlite"]
 
+#import "AddressBookModel.h"
+#import "DataBase.h"
 
 #endif /* WCJAddressBook_pch */

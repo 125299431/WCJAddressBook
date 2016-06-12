@@ -1,31 +1,27 @@
 //
 //  DataBase.h
-//  ManClothes
+//  WCJAddressBook
 //
-//  Created by imac on 15/10/11.
-//  Copyright (c) 2015年 imac. All rights reserved.
+//  Created by ZhengHongye on 16/6/12.
+//  Copyright © 2016年 WuChaojie. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "EGODatabase.h"
-#import "SellModel.h"
-#import "IssuseModel.h"
+
 @interface DataBase : NSObject
 
+//增
++ (void)insertDataToDataBase:(AddressBookModel *)model;
 
-//插入数据（单品收藏）
-+ (void)insertDPDataToDataBase:(SellModel *)sellModel;
+//删
++ (void)removeDataWithTelephone:(NSString *)telephone;
 
-//插入数据(专题收藏)
-+ (void)insertZTDataToDataBase:(IssuseModel *)issuseModel;
+//改
++ (void)upDateDataWithOldTel:(NSString *)telephone WithNewTel:(NSString *)newtelephone WithNewName:(NSString *)name;
 
-//删除数据
-+ (void)removeDataWithTableName:(NSString *)tableName ItemId:(NSString *)itemId;
-
-
-//查询数据
-+ (void)selectDataFromDataBaseWithTableName:(NSString *)tableName block:(void(^)(NSArray *))competionHandle;
-
+//查
++ (void)selectDataFromDataBaseCallBack:(void(^)(NSArray *))callBack;
 
 
 @end

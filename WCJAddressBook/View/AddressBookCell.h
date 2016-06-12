@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AddressBookCell.h
 //  WCJAddressBook
 //
 //  Created by ZhengHongye on 16/6/12.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface AddressBookCell : UITableViewCell
 
 @end
-
