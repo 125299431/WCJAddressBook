@@ -16,11 +16,23 @@
     EGODatabase *dataBase = [[EGODatabase alloc] initWithPath:dataBaseFilePath];
     [dataBase open];
     
-    NSString *insertSql = @"INSERT  INTO AddressBookList (name,telephone,image) VALUES (?,?,?);";
-    NSArray *params = @[model.name, model.telephone, model.image];
+    NSString *insertSql;
+    NSArray *params;
+    if (!model.image) {
+        insertSql = @"INSERT  INTO AddressBookList (name,telephone) VALUES (?,?);";
+        params = @[model.name, model.telephone];
+    }else {
+        insertSql = @"INSERT  INTO AddressBookList (name,telephone,image) VALUES (?,?,?);";
+        params = @[model.name, model.telephone, model.image];
+    }
+    
+    
     EGODatabaseRequest *request = [dataBase requestWithUpdate:insertSql parameters:params];
     [request setCompletion:^(EGODatabaseRequest *request, EGODatabaseResult *result, NSError *error) {
-        NSLog(@"添加数据完成");
+        if (!error) {
+            NSLog(@"添加数据完成");
+        }
+        
         //关闭数据库
         [dataBase close];
     }];
@@ -30,15 +42,24 @@
 }
 
 //删
-+ (void)removeDataWithTelephone:(NSString *)telephone
++ (void)removeDataWithTelephone:(NSString *)telephone WithCallBack:(void(^)(BOOL))callBack
 {
     EGODatabase *dataBase = [[EGODatabase alloc] initWithPath:dataBaseFilePath];
-    [dataBase open];
-    NSString *delecateSql = [NSString stringWithFormat:@"DELETE FROM AddressBookList WHERE id=(?)"];
+    NSString *delecateSql = [NSString stringWithFormat:@"DELETE FROM AddressBookList WHERE telephone=(?)"];
     NSArray *params = @[telephone];
     EGODatabaseRequest *request = [dataBase requestWithUpdate:delecateSql parameters:params];
     [request setCompletion:^(EGODatabaseRequest *requst, EGODatabaseResult *result, NSError *error) {
-        NSLog(@"删除数据成功");
+        if (!error) {
+            NSLog(@"删除数据成功");
+            if (callBack) {
+                callBack(YES);
+            }
+        }else{
+            NSLog(@"Error---------%@", error);
+            if (callBack) {
+                callBack(NO);
+            }
+        }
         [dataBase close];
     }];
     

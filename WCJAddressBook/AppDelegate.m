@@ -19,6 +19,7 @@
 
     NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"WCJAddressBook.sqlite" ofType:nil];
     NSString *targetPath = [NSHomeDirectory() stringByAppendingString:@"/Documents/database.sqlite"];
+    NSLog(@"数据库存放路径--------%@", targetPath);
     NSFileManager *fileManage = [NSFileManager defaultManager];
     if (![fileManage fileExistsAtPath:targetPath]) {
         [fileManage copyItemAtPath:sourcePath toPath:targetPath error:nil];

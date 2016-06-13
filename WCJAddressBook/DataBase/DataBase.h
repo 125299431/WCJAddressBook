@@ -9,13 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "EGODatabase.h"
 
+typedef void(^CallBack)(BOOL isSuccess);
+
 @interface DataBase : NSObject
+
 
 //增
 + (void)insertDataToDataBase:(AddressBookModel *)model;
 
 //删
-+ (void)removeDataWithTelephone:(NSString *)telephone;
++ (void)removeDataWithTelephone:(NSString *)telephone WithCallBack:(void(^)(BOOL))callBack;
 
 //改
 + (void)upDateDataWithOldTel:(NSString *)telephone WithNewTel:(NSString *)newtelephone WithNewName:(NSString *)name;

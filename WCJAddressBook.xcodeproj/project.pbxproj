@@ -14,18 +14,20 @@
 		781852601D0D393B0096B5D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7818525E1D0D393B0096B5D9 /* LaunchScreen.storyboard */; };
 		7818526B1D0D393C0096B5D9 /* WCJAddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7818526A1D0D393C0096B5D9 /* WCJAddressBookTests.m */; };
 		781852761D0D393C0096B5D9 /* WCJAddressBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 781852751D0D393C0096B5D9 /* WCJAddressBookUITests.m */; };
-		781852841D0D45E80096B5D9 /* WCJAddressBook.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 781852831D0D45E80096B5D9 /* WCJAddressBook.sqlite */; };
 		781852941D0D472D0096B5D9 /* EGODatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7818528B1D0D472D0096B5D9 /* EGODatabase.m */; };
 		781852951D0D472D0096B5D9 /* EGODatabaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7818528D1D0D472D0096B5D9 /* EGODatabaseRequest.m */; };
 		781852961D0D472D0096B5D9 /* EGODatabaseResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 7818528F1D0D472D0096B5D9 /* EGODatabaseResult.m */; };
 		781852971D0D472D0096B5D9 /* EGODatabaseRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 781852921D0D472D0096B5D9 /* EGODatabaseRow.m */; };
 		7818529C1D0D4AFF0096B5D9 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7818529A1D0D4AFF0096B5D9 /* AddressListViewController.m */; };
-		7818529D1D0D4AFF0096B5D9 /* AddressListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7818529B1D0D4AFF0096B5D9 /* AddressListViewController.xib */; };
 		781852A01D0D4B530096B5D9 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7818529F1D0D4B530096B5D9 /* DataBase.m */; };
 		781852A61D0D4C170096B5D9 /* AddressBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 781852A51D0D4C170096B5D9 /* AddressBookModel.m */; };
 		781852AA1D0D58470096B5D9 /* AddressBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781852A81D0D58470096B5D9 /* AddressBookCell.m */; };
 		781852AB1D0D58470096B5D9 /* AddressBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781852A91D0D58470096B5D9 /* AddressBookCell.xib */; };
 		781852AD1D0D66E20096B5D9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 781852AC1D0D66E20096B5D9 /* libsqlite3.tbd */; };
+		78D7D3D41D0EA886001130D9 /* WCJAddressBook.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 78D7D3D31D0EA886001130D9 /* WCJAddressBook.sqlite */; };
+		78D7D3E01D0EAAFF001130D9 /* InsertOrUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D7D3DE1D0EAAFF001130D9 /* InsertOrUpdateViewController.m */; };
+		78D7D3E11D0EAAFF001130D9 /* InsertOrUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D7D3DF1D0EAAFF001130D9 /* InsertOrUpdateViewController.xib */; };
+		78D7D3E41D0EB64F001130D9 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D7D3E31D0EB64F001130D9 /* UIViewExt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,6 @@
 		781852711D0D393C0096B5D9 /* WCJAddressBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WCJAddressBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		781852751D0D393C0096B5D9 /* WCJAddressBookUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCJAddressBookUITests.m; sourceTree = "<group>"; };
 		781852771D0D393C0096B5D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		781852831D0D45E80096B5D9 /* WCJAddressBook.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = WCJAddressBook.sqlite; sourceTree = "<group>"; };
 		7818528A1D0D472D0096B5D9 /* EGODatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabase.h; sourceTree = "<group>"; };
 		7818528B1D0D472D0096B5D9 /* EGODatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGODatabase.m; sourceTree = "<group>"; };
 		7818528C1D0D472D0096B5D9 /* EGODatabaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGODatabaseRequest.h; sourceTree = "<group>"; };
@@ -74,7 +75,6 @@
 		781852981D0D47820096B5D9 /* WCJAddressBook.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCJAddressBook.pch; sourceTree = "<group>"; };
 		781852991D0D4AFF0096B5D9 /* AddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddressListViewController.h; path = ../AddressListViewController.h; sourceTree = "<group>"; };
 		7818529A1D0D4AFF0096B5D9 /* AddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddressListViewController.m; path = ../AddressListViewController.m; sourceTree = "<group>"; };
-		7818529B1D0D4AFF0096B5D9 /* AddressListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddressListViewController.xib; path = ../AddressListViewController.xib; sourceTree = "<group>"; };
 		7818529E1D0D4B530096B5D9 /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
 		7818529F1D0D4B530096B5D9 /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
 		781852A41D0D4C170096B5D9 /* AddressBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookModel.h; sourceTree = "<group>"; };
@@ -83,6 +83,12 @@
 		781852A81D0D58470096B5D9 /* AddressBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookCell.m; sourceTree = "<group>"; };
 		781852A91D0D58470096B5D9 /* AddressBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressBookCell.xib; sourceTree = "<group>"; };
 		781852AC1D0D66E20096B5D9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		78D7D3D31D0EA886001130D9 /* WCJAddressBook.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = WCJAddressBook.sqlite; sourceTree = "<group>"; };
+		78D7D3DD1D0EAAFF001130D9 /* InsertOrUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertOrUpdateViewController.h; sourceTree = "<group>"; };
+		78D7D3DE1D0EAAFF001130D9 /* InsertOrUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertOrUpdateViewController.m; sourceTree = "<group>"; };
+		78D7D3DF1D0EAAFF001130D9 /* InsertOrUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertOrUpdateViewController.xib; sourceTree = "<group>"; };
+		78D7D3E21D0EB64F001130D9 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		78D7D3E31D0EB64F001130D9 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +151,8 @@
 				7818525C1D0D393B0096B5D9 /* Assets.xcassets */,
 				7818525E1D0D393B0096B5D9 /* LaunchScreen.storyboard */,
 				781852611D0D393B0096B5D9 /* Info.plist */,
+				78D7D3D31D0EA886001130D9 /* WCJAddressBook.sqlite */,
 				781852981D0D47820096B5D9 /* WCJAddressBook.pch */,
-				781852831D0D45E80096B5D9 /* WCJAddressBook.sqlite */,
 				781852501D0D393B0096B5D9 /* Supporting Files */,
 			);
 			path = WCJAddressBook;
@@ -155,6 +161,8 @@
 		781852501D0D393B0096B5D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				78D7D3E21D0EB64F001130D9 /* UIViewExt.h */,
+				78D7D3E31D0EB64F001130D9 /* UIViewExt.m */,
 				781852891D0D472D0096B5D9 /* EGODataBase */,
 				781852511D0D393B0096B5D9 /* main.m */,
 			);
@@ -210,7 +218,9 @@
 			children = (
 				781852991D0D4AFF0096B5D9 /* AddressListViewController.h */,
 				7818529A1D0D4AFF0096B5D9 /* AddressListViewController.m */,
-				7818529B1D0D4AFF0096B5D9 /* AddressListViewController.xib */,
+				78D7D3DD1D0EAAFF001130D9 /* InsertOrUpdateViewController.h */,
+				78D7D3DE1D0EAAFF001130D9 /* InsertOrUpdateViewController.m */,
+				78D7D3DF1D0EAAFF001130D9 /* InsertOrUpdateViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,11 +347,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D7D3E11D0EAAFF001130D9 /* InsertOrUpdateViewController.xib in Resources */,
 				781852601D0D393B0096B5D9 /* LaunchScreen.storyboard in Resources */,
 				781852AB1D0D58470096B5D9 /* AddressBookCell.xib in Resources */,
-				7818529D1D0D4AFF0096B5D9 /* AddressListViewController.xib in Resources */,
+				78D7D3D41D0EA886001130D9 /* WCJAddressBook.sqlite in Resources */,
 				7818525D1D0D393B0096B5D9 /* Assets.xcassets in Resources */,
-				781852841D0D45E80096B5D9 /* WCJAddressBook.sqlite in Resources */,
 				7818525B1D0D393B0096B5D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,8 +381,10 @@
 				781852AA1D0D58470096B5D9 /* AddressBookCell.m in Sources */,
 				781852941D0D472D0096B5D9 /* EGODatabase.m in Sources */,
 				781852551D0D393B0096B5D9 /* AppDelegate.m in Sources */,
+				78D7D3E41D0EB64F001130D9 /* UIViewExt.m in Sources */,
 				781852A01D0D4B530096B5D9 /* DataBase.m in Sources */,
 				781852971D0D472D0096B5D9 /* EGODatabaseRow.m in Sources */,
+				78D7D3E01D0EAAFF001130D9 /* InsertOrUpdateViewController.m in Sources */,
 				781852951D0D472D0096B5D9 /* EGODatabaseRequest.m in Sources */,
 				781852961D0D472D0096B5D9 /* EGODatabaseResult.m in Sources */,
 				781852521D0D393B0096B5D9 /* main.m in Sources */,
@@ -602,6 +614,7 @@
 				7818527C1D0D393C0096B5D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7818527D1D0D393C0096B5D9 /* Build configuration list for PBXNativeTarget "WCJAddressBookTests" */ = {
 			isa = XCConfigurationList;
@@ -610,6 +623,7 @@
 				7818527F1D0D393C0096B5D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		781852801D0D393C0096B5D9 /* Build configuration list for PBXNativeTarget "WCJAddressBookUITests" */ = {
 			isa = XCConfigurationList;
@@ -618,6 +632,7 @@
 				781852821D0D393C0096B5D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
