@@ -42,7 +42,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="通讯录" id="CIn-cB-Kfw">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="uqG-nC-U2U">
+                        <barButtonItem key="rightBarButtonItem" id="uqG-nC-U2U">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="9Rf-1z-hEV">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

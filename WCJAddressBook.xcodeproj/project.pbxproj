@@ -24,6 +24,11 @@
 		781852AA1D0D58470096B5D9 /* AddressBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 781852A81D0D58470096B5D9 /* AddressBookCell.m */; };
 		781852AB1D0D58470096B5D9 /* AddressBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781852A91D0D58470096B5D9 /* AddressBookCell.xib */; };
 		781852AD1D0D66E20096B5D9 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 781852AC1D0D66E20096B5D9 /* libsqlite3.tbd */; };
+		786D7CFE1D0FA37500EE759E /* InsertPhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786D7CFC1D0FA37500EE759E /* InsertPhoneCell.m */; };
+		786D7CFF1D0FA37500EE759E /* InsertPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786D7CFD1D0FA37500EE759E /* InsertPhoneCell.xib */; };
+		786D7D031D0FA54000EE759E /* PhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786D7D011D0FA54000EE759E /* PhoneCell.m */; };
+		786D7D041D0FA54000EE759E /* PhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786D7D021D0FA54000EE759E /* PhoneCell.xib */; };
+		786D7D061D100A5E00EE759E /* cjImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 786D7D051D100A5E00EE759E /* cjImage.png */; };
 		78D7D3D41D0EA886001130D9 /* WCJAddressBook.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 78D7D3D31D0EA886001130D9 /* WCJAddressBook.sqlite */; };
 		78D7D3E01D0EAAFF001130D9 /* InsertOrUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D7D3DE1D0EAAFF001130D9 /* InsertOrUpdateViewController.m */; };
 		78D7D3E11D0EAAFF001130D9 /* InsertOrUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D7D3DF1D0EAAFF001130D9 /* InsertOrUpdateViewController.xib */; };
@@ -83,6 +88,13 @@
 		781852A81D0D58470096B5D9 /* AddressBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookCell.m; sourceTree = "<group>"; };
 		781852A91D0D58470096B5D9 /* AddressBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressBookCell.xib; sourceTree = "<group>"; };
 		781852AC1D0D66E20096B5D9 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		786D7CFB1D0FA37500EE759E /* InsertPhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertPhoneCell.h; sourceTree = "<group>"; };
+		786D7CFC1D0FA37500EE759E /* InsertPhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertPhoneCell.m; sourceTree = "<group>"; };
+		786D7CFD1D0FA37500EE759E /* InsertPhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertPhoneCell.xib; sourceTree = "<group>"; };
+		786D7D001D0FA54000EE759E /* PhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneCell.h; sourceTree = "<group>"; };
+		786D7D011D0FA54000EE759E /* PhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneCell.m; sourceTree = "<group>"; };
+		786D7D021D0FA54000EE759E /* PhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneCell.xib; sourceTree = "<group>"; };
+		786D7D051D100A5E00EE759E /* cjImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjImage.png; sourceTree = "<group>"; };
 		78D7D3D31D0EA886001130D9 /* WCJAddressBook.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = WCJAddressBook.sqlite; sourceTree = "<group>"; };
 		78D7D3DD1D0EAAFF001130D9 /* InsertOrUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertOrUpdateViewController.h; sourceTree = "<group>"; };
 		78D7D3DE1D0EAAFF001130D9 /* InsertOrUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertOrUpdateViewController.m; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 		781852501D0D393B0096B5D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				786D7D051D100A5E00EE759E /* cjImage.png */,
 				78D7D3E21D0EB64F001130D9 /* UIViewExt.h */,
 				78D7D3E31D0EB64F001130D9 /* UIViewExt.m */,
 				781852891D0D472D0096B5D9 /* EGODataBase */,
@@ -240,6 +253,12 @@
 				781852A71D0D58470096B5D9 /* AddressBookCell.h */,
 				781852A81D0D58470096B5D9 /* AddressBookCell.m */,
 				781852A91D0D58470096B5D9 /* AddressBookCell.xib */,
+				786D7CFB1D0FA37500EE759E /* InsertPhoneCell.h */,
+				786D7CFC1D0FA37500EE759E /* InsertPhoneCell.m */,
+				786D7CFD1D0FA37500EE759E /* InsertPhoneCell.xib */,
+				786D7D001D0FA54000EE759E /* PhoneCell.h */,
+				786D7D011D0FA54000EE759E /* PhoneCell.m */,
+				786D7D021D0FA54000EE759E /* PhoneCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,11 +366,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786D7D041D0FA54000EE759E /* PhoneCell.xib in Resources */,
 				78D7D3E11D0EAAFF001130D9 /* InsertOrUpdateViewController.xib in Resources */,
+				786D7D061D100A5E00EE759E /* cjImage.png in Resources */,
 				781852601D0D393B0096B5D9 /* LaunchScreen.storyboard in Resources */,
 				781852AB1D0D58470096B5D9 /* AddressBookCell.xib in Resources */,
 				78D7D3D41D0EA886001130D9 /* WCJAddressBook.sqlite in Resources */,
 				7818525D1D0D393B0096B5D9 /* Assets.xcassets in Resources */,
+				786D7CFF1D0FA37500EE759E /* InsertPhoneCell.xib in Resources */,
 				7818525B1D0D393B0096B5D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,11 +399,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786D7D031D0FA54000EE759E /* PhoneCell.m in Sources */,
 				781852A61D0D4C170096B5D9 /* AddressBookModel.m in Sources */,
 				781852AA1D0D58470096B5D9 /* AddressBookCell.m in Sources */,
 				781852941D0D472D0096B5D9 /* EGODatabase.m in Sources */,
 				781852551D0D393B0096B5D9 /* AppDelegate.m in Sources */,
 				78D7D3E41D0EB64F001130D9 /* UIViewExt.m in Sources */,
+				786D7CFE1D0FA37500EE759E /* InsertPhoneCell.m in Sources */,
 				781852A01D0D4B530096B5D9 /* DataBase.m in Sources */,
 				781852971D0D472D0096B5D9 /* EGODatabaseRow.m in Sources */,
 				78D7D3E01D0EAAFF001130D9 /* InsertOrUpdateViewController.m in Sources */,

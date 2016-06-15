@@ -11,7 +11,7 @@
 @implementation DataBase
 
 //增
-+ (void)insertDataToDataBase:(AddressBookModel *)model
++ (void)insertDataToDataBase:(AddressBookModel *)model WithCallBack:(void(^)(BOOL))callBack
 {
     EGODatabase *dataBase = [[EGODatabase alloc] initWithPath:dataBaseFilePath];
     [dataBase open];
@@ -31,7 +31,15 @@
     [request setCompletion:^(EGODatabaseRequest *request, EGODatabaseResult *result, NSError *error) {
         if (!error) {
             NSLog(@"添加数据完成");
+            if (callBack) {
+                callBack(YES);
+            }
+        }else {
+            if (callBack) {
+                callBack(NO);
+            }
         }
+        
         
         //关闭数据库
         [dataBase close];
@@ -68,7 +76,7 @@
 }
 
 //改
-+ (void)upDateDataWithOldTel:(NSString *)telephone WithNewTel:(NSString *)newtelephone WithNewName:(NSString *)name
++ (void)upDateDataWithOldTel:(NSString *)telephone WithNewTel:(NSString *)newtelephone WithNewName:(NSString *)name WithCallBack:(void(^)(BOOL))callBack
 {
     EGODatabase *dataBase = [[EGODatabase alloc] initWithPath:dataBaseFilePath];
     [dataBase open];
@@ -87,7 +95,17 @@
     
     EGODatabaseRequest *request = [dataBase requestWithUpdate:upDateSql parameters:params];
     [request setCompletion:^(EGODatabaseRequest *requst, EGODatabaseResult *result, NSError *error) {
-        NSLog(@"删除数据成功");
+        if (!error) {
+             NSLog(@"删除数据成功");
+            if (callBack) {
+                callBack(YES);
+            }
+        }else {
+            if (callBack) {
+                callBack(NO);
+            }
+        }
+       
         [dataBase close];
     }];
     

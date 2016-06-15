@@ -29,6 +29,11 @@
     // Do any additional setup after loading the view from its nib.
     self.tableView.rowHeight = 40;
     self.tableView.sectionFooterHeight = 0.000001;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     [self _loadData];
 }
 
@@ -135,6 +140,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"identifier"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"identifier"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
     NSArray *modelArray = [self.dataArr objectAtIndex:indexPath.section];
@@ -147,6 +153,25 @@
 //        cell = [[[NSBundle mainBundle] loadNibNamed:@"AddressBookCell" owner:self options:nil] lastObject];
 //    }
 //    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"%ld组-----%ld行被点击", indexPath.section, indexPath.row);
+    InsertOrUpdateViewController *insertVC = [[InsertOrUpdateViewController alloc] init];
+    insertVC.title = @"联系人详情";
+    NSArray *modelArray = [self.dataArr objectAtIndex:indexPath.section];
+    AddressBookModel *model = [modelArray objectAtIndex:indexPath.row];
+    insertVC.phoneStr = model.telephone;
+    insertVC.nameStr = model.name;
+    insertVC.isInsertPhone = YES;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:insertVC];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:nav animated:YES completion:nil];
+    });
+    //    [self.navigationController pushViewController:insertVC animated:YES];
+    
 }
 
 //右边的索引

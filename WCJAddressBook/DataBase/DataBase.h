@@ -15,13 +15,13 @@ typedef void(^CallBack)(BOOL isSuccess);
 
 
 //增
-+ (void)insertDataToDataBase:(AddressBookModel *)model;
++ (void)insertDataToDataBase:(AddressBookModel *)model WithCallBack:(void(^)(BOOL))callBack;
 
 //删
 + (void)removeDataWithTelephone:(NSString *)telephone WithCallBack:(void(^)(BOOL))callBack;
 
 //改
-+ (void)upDateDataWithOldTel:(NSString *)telephone WithNewTel:(NSString *)newtelephone WithNewName:(NSString *)name;
++ (void)upDateDataWithOldTel:(NSString *)telephone WithNewTel:(NSString *)newtelephone WithNewName:(NSString *)name WithCallBack:(void(^)(BOOL))callBack;
 
 //查
 + (void)selectDataFromDataBaseCallBack:(void(^)(NSArray *))callBack;

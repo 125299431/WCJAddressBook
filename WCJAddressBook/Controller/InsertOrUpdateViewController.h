@@ -10,4 +10,11 @@
 
 @interface InsertOrUpdateViewController : UIViewController
 
+@property (nonatomic, copy) NSString *phoneStr;
+
+@property (nonatomic, copy) NSString *nameStr;
+
+@property (nonatomic, assign) BOOL isInsertPhone;
+
+
 @end
