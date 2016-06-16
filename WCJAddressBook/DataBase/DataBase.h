@@ -23,8 +23,10 @@ typedef void(^CallBack)(BOOL isSuccess);
 //改
 + (void)upDateDataWithOldTel:(NSString *)telephone WithNewTel:(NSString *)newtelephone WithNewName:(NSString *)name WithCallBack:(void(^)(BOOL))callBack;
 
-//查
+//查---所有
 + (void)selectDataFromDataBaseCallBack:(void(^)(NSArray *))callBack;
 
+//查---精确
++ (void)selectPreciseDataFromDataBaseWithString:(NSString *)nameOrTelephone CallBack:(void(^)(NSArray *))callBack;
 
 @end

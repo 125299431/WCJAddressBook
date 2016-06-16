@@ -10,15 +10,17 @@
 #import "AddressBookCell.h"
 #import "InsertOrUpdateViewController.h"
 
-@interface AddressListViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface AddressListViewController ()<UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchResultsUpdating>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-//@property (nonatomic, strong) NSDictionary *dicData;
 
 @property (nonatomic, strong) NSArray *dataArr;
 
 @property (nonatomic, strong) NSArray *allKeys;//右边的索引
+
+
+@property (nonatomic, strong) UISearchController *searchVC;
 
 @end
 
@@ -26,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     // Do any additional setup after loading the view from its nib.
     self.tableView.rowHeight = 40;
     self.tableView.sectionFooterHeight = 0.000001;
@@ -34,7 +37,34 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self _initView];
     [self _loadData];
+}
+
+- (void)_initView
+{
+    self.view.backgroundColor = [UIColor whiteColor];
+//    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, 30)];
+////    self.searchBar.backgroundColor = [UIColor redColor];
+//    self.searchBar.placeholder = @"搜索";
+//    self.searchBar.searchBarStyle = UISearchBarStyleProminent;
+////    self.searchBar.showsCancelButton = YES;
+//    [self.searchBar setShowsCancelButton:YES animated:YES];
+//    self.searchBar.barStyle = UIBarStyleDefault;
+//    self.searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+//    self.searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+//    [self.view addSubview:self.searchBar];
+    self.searchVC = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchVC.delegate = self;
+    self.searchVC.searchResultsUpdater = self;
+    self.searchVC.dimsBackgroundDuringPresentation = NO;
+    self.searchVC.obscuresBackgroundDuringPresentation = NO;
+    self.searchVC.hidesNavigationBarDuringPresentation = YES;
+    self.searchVC.searchBar.placeholder = @"搜索";
+    self.searchVC.searchBar.frame = CGRectMake(self.searchVC.searchBar.frame.origin.x, self.searchVC.searchBar.frame.origin.y, self.searchVC.searchBar.frame.size.width, 44);
+    self.searchVC.searchBar.searchBarStyle = UISearchBarStyleDefault;
+    self.tableView.tableHeaderView = self.searchVC.searchBar;
+//    self.tableView.top = self.searchBar.bottom;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,34 +74,39 @@
 
 - (void)_loadData
 {
-    NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
     [DataBase selectDataFromDataBaseCallBack:^(NSArray *array) {
-        for (int i = 0; i < array.count; i++) {
-            AddressBookModel *model = [array objectAtIndex:i];
-            NSString *firStr = [self transformCharacter:model.name];
-            if (![mDic.allKeys containsObject:firStr]) {
-                NSMutableArray *littleMArr = [NSMutableArray array];
-//                [littleMArr addObject:firStr];
-                [littleMArr addObject:model];
-                [mDic setObject:littleMArr forKey:firStr];
-            }else {
-                NSMutableArray *littleMArr = [mDic objectForKey:firStr];
-                [littleMArr addObject:model];
-            }
-        }
-        NSArray *arr = [[mDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
-        self.allKeys = arr;
-        NSMutableArray *bigArr = [NSMutableArray array];
-        for (int i = 0; i < arr.count; i++) {
-            [bigArr addObject:[mDic valueForKey:arr[i]]];
-        }
-        
-        self.dataArr = bigArr;
-        /*
-         [[addModel,addModel],[addModel,...],...]//按照首字母顺序排序
-         */
-        [self.tableView reloadData];
+        [self compareDataWith:array];
     }];
+}
+
+- (void)compareDataWith:(NSArray *)array
+{
+    NSMutableDictionary *mDic = [NSMutableDictionary dictionary];
+    for (int i = 0; i < array.count; i++) {
+        AddressBookModel *model = [array objectAtIndex:i];
+        NSString *firStr = [self transformCharacter:model.name];
+        if (![mDic.allKeys containsObject:firStr]) {
+            NSMutableArray *littleMArr = [NSMutableArray array];
+            //                [littleMArr addObject:firStr];
+            [littleMArr addObject:model];
+            [mDic setObject:littleMArr forKey:firStr];
+        }else {
+            NSMutableArray *littleMArr = [mDic objectForKey:firStr];
+            [littleMArr addObject:model];
+        }
+    }
+    NSArray *arr = [[mDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    self.allKeys = arr;
+    NSMutableArray *bigArr = [NSMutableArray array];
+    for (int i = 0; i < arr.count; i++) {
+        [bigArr addObject:[mDic valueForKey:arr[i]]];
+    }
+    
+    self.dataArr = bigArr;
+    /*
+     [[addModel,addModel],[addModel,...],...]//按照首字母顺序排序
+     */
+    [self.tableView reloadData];
 }
 
 - (NSString *)transformCharacter:(NSString *)sourceStr
@@ -91,7 +126,7 @@
     return @"#";
 }
 - (IBAction)insertData:(UIButton *)sender {
-    /*
+    
     //批量添加数据
     NSArray *fontNameArr = [UIFont familyNames];
     long long telephone = 13584834983;
@@ -99,10 +134,12 @@
         AddressBookModel *model = [[AddressBookModel alloc] init];
         model.name = fontNameArr[i];
         model.telephone = [NSString stringWithFormat:@"%lld", telephone--];
-        [DataBase insertDataToDataBase:model];
+        [DataBase insertDataToDataBase:model WithCallBack:^(BOOL isSuccess) {
+            [self.tableView reloadData];
+        }];
     }
     [self.tableView reloadData];
-     */
+     
     InsertOrUpdateViewController *insertVC = [[InsertOrUpdateViewController alloc] init];
     insertVC.title = @"新建联系人";
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:insertVC];
@@ -157,6 +194,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.searchVC.active = NO;
     NSLog(@"%ld组-----%ld行被点击", indexPath.section, indexPath.row);
     InsertOrUpdateViewController *insertVC = [[InsertOrUpdateViewController alloc] init];
     insertVC.title = @"联系人详情";
@@ -203,6 +241,26 @@
     }];
     return @[deleteAction];
 }
+
+#pragma mark----UISearchResultsUpdating
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController
+{
+    if (searchController.active) {
+        if (searchController.searchBar.text.length == 0) {
+            self.allKeys = nil;
+            self.dataArr = nil;
+            [self.tableView reloadData];
+            return;
+        }
+        [DataBase selectPreciseDataFromDataBaseWithString:searchController.searchBar.text CallBack:^(NSArray *array) {
+            [self compareDataWith:array];
+        }];
+    }else {
+        [self _loadData];
+    }
+  
+}
+
 
 
 

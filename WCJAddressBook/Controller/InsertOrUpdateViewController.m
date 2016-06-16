@@ -79,38 +79,54 @@
 
 - (void)finishClick:(UIBarButtonItem *)item
 {
-    __block BOOL isSuccessed = false;
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
     if (self.nameStr) {
         //改
         if (![self.nameStr isEqualToString:self.nameTextField.text]) {
             //姓名
             [DataBase upDateDataWithOldTel:self.phoneStr WithNewTel:nil WithNewName:self.nameTextField.text WithCallBack:^(BOOL isSuccess) {
-                isSuccessed = isSuccess;
+                if (isSuccess) {
+                    [self presentAlter:@"更改姓名成功!"];
+                }else {
+                    [self presentAlter:@"更改姓名失败!"];
+                }
             }];
         }
         
         if (![self.phoneStr isEqualToString:self.phoneTextField.text]) {
             //电话
             [DataBase upDateDataWithOldTel:self.phoneStr WithNewTel:self.phoneTextField.text WithNewName:nil WithCallBack:^(BOOL isSuccess) {
-                isSuccessed = isSuccess;
+                if (isSuccess) {
+                    [self presentAlter:@"更改电话成功!"];
+                }else {
+                    [self presentAlter:@"更改电话失败!"];
+                }
             }];
         }
     }else {
+        //增
         AddressBookModel *model = [[AddressBookModel alloc] init];
         model.name = self.nameTextField.text;
         model.telephone = self.phoneTextField.text;
-        //增
         [DataBase insertDataToDataBase:model WithCallBack:^(BOOL isSuccess) {
-            isSuccessed = isSuccess;
+            if (isSuccess) {
+                [self presentAlter:@"添加信息成功!"];
+            }else {
+                [self presentAlter:@"添加信息失败!"];
+            }
         }];
     }
-    if (isSuccessed) {
-        UIAlertController *alterCtrl = [UIAlertController alertControllerWithTitle:nil message:@"更改成功!" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *enterAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-        }];
-        [self presentViewController:alterCtrl animated:YES completion:nil];
-    }
+
+}
+
+- (void)presentAlter:(NSString *)messageStr
+{
+    UIAlertController *alterCtrl = [UIAlertController alertControllerWithTitle:nil message:messageStr preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *enterAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self cancleClick:nil];
+    }];
+    [alterCtrl addAction:enterAction];
+    [self presentViewController:alterCtrl animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
