@@ -28,11 +28,12 @@
 		786D7CFF1D0FA37500EE759E /* InsertPhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786D7CFD1D0FA37500EE759E /* InsertPhoneCell.xib */; };
 		786D7D031D0FA54000EE759E /* PhoneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 786D7D011D0FA54000EE759E /* PhoneCell.m */; };
 		786D7D041D0FA54000EE759E /* PhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786D7D021D0FA54000EE759E /* PhoneCell.xib */; };
-		786D7D061D100A5E00EE759E /* cjImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 786D7D051D100A5E00EE759E /* cjImage.png */; };
 		78D7D3D41D0EA886001130D9 /* WCJAddressBook.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 78D7D3D31D0EA886001130D9 /* WCJAddressBook.sqlite */; };
 		78D7D3E01D0EAAFF001130D9 /* InsertOrUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D7D3DE1D0EAAFF001130D9 /* InsertOrUpdateViewController.m */; };
 		78D7D3E11D0EAAFF001130D9 /* InsertOrUpdateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D7D3DF1D0EAAFF001130D9 /* InsertOrUpdateViewController.xib */; };
 		78D7D3E41D0EB64F001130D9 /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D7D3E31D0EB64F001130D9 /* UIViewExt.m */; };
+		78F012581D12679F00ED9325 /* userphoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F012561D12679F00ED9325 /* userphoto@2x.png */; };
+		78F012591D12679F00ED9325 /* userphoto@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F012571D12679F00ED9325 /* userphoto@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,13 +95,14 @@
 		786D7D001D0FA54000EE759E /* PhoneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneCell.h; sourceTree = "<group>"; };
 		786D7D011D0FA54000EE759E /* PhoneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneCell.m; sourceTree = "<group>"; };
 		786D7D021D0FA54000EE759E /* PhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneCell.xib; sourceTree = "<group>"; };
-		786D7D051D100A5E00EE759E /* cjImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cjImage.png; sourceTree = "<group>"; };
 		78D7D3D31D0EA886001130D9 /* WCJAddressBook.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = WCJAddressBook.sqlite; sourceTree = "<group>"; };
 		78D7D3DD1D0EAAFF001130D9 /* InsertOrUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertOrUpdateViewController.h; sourceTree = "<group>"; };
 		78D7D3DE1D0EAAFF001130D9 /* InsertOrUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertOrUpdateViewController.m; sourceTree = "<group>"; };
 		78D7D3DF1D0EAAFF001130D9 /* InsertOrUpdateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InsertOrUpdateViewController.xib; sourceTree = "<group>"; };
 		78D7D3E21D0EB64F001130D9 /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
 		78D7D3E31D0EB64F001130D9 /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		78F012561D12679F00ED9325 /* userphoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userphoto@2x.png"; sourceTree = "<group>"; };
+		78F012571D12679F00ED9325 /* userphoto@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userphoto@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +175,8 @@
 		781852501D0D393B0096B5D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				786D7D051D100A5E00EE759E /* cjImage.png */,
+				78F012561D12679F00ED9325 /* userphoto@2x.png */,
+				78F012571D12679F00ED9325 /* userphoto@3x.png */,
 				78D7D3E21D0EB64F001130D9 /* UIViewExt.h */,
 				78D7D3E31D0EB64F001130D9 /* UIViewExt.m */,
 				781852891D0D472D0096B5D9 /* EGODataBase */,
@@ -367,8 +370,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				786D7D041D0FA54000EE759E /* PhoneCell.xib in Resources */,
+				78F012591D12679F00ED9325 /* userphoto@3x.png in Resources */,
+				78F012581D12679F00ED9325 /* userphoto@2x.png in Resources */,
 				78D7D3E11D0EAAFF001130D9 /* InsertOrUpdateViewController.xib in Resources */,
-				786D7D061D100A5E00EE759E /* cjImage.png in Resources */,
 				781852601D0D393B0096B5D9 /* LaunchScreen.storyboard in Resources */,
 				781852AB1D0D58470096B5D9 /* AddressBookCell.xib in Resources */,
 				78D7D3D41D0EA886001130D9 /* WCJAddressBook.sqlite in Resources */,

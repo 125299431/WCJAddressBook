@@ -53,10 +53,9 @@
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenWidth - 80) / 2, 10, 80, 80)];
-    if (self.nameStr) {
-        imageView.image = [UIImage imageNamed:@"cjImage.png"];
-    }
-    imageView.backgroundColor = [UIColor redColor];
+    
+    imageView.image = [UIImage imageNamed:@"userphoto"];
+    
     [headerView addSubview:imageView];
     self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake((kScreenWidth - 250) / 2, imageView.bottom + 20, 250, 40)];
     self.nameTextField.borderStyle = UITextBorderStyleRoundedRect;
